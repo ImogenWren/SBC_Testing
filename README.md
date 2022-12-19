@@ -40,9 +40,13 @@ _First cronjob is installed on each SBC_
 ```
 */3 * * * * date >> ./remotelabs/SBC_TEST.log
 ```
-_Second cronjob is installed on control 2, to soft shutdown SBC before power is removed
+_Second cronjob is installed on control 2, to soft shutdown SBC before power is removed_
 ```
 */10 * * * * sudo shutdown
+```
+_Alternative 2nd cronjob to also save shutdown notice to the log_
+```
+*/4 * * * * "Shutdown Initiated" + date >> ./remotelabs/SBC_TEST.log sudo shutdown
 ```
 ## Test Setup
 - All SBCs given a unique and incremented IP Address (192.168.1.X) and a logical hostname mirroring the IP
