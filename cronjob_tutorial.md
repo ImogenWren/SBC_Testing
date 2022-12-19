@@ -23,6 +23,12 @@ This line tells cron to execute the date command every 5 minutes (*/5), and appe
 Save the file and exit the text editor. The cron job will now run every 5 minutes.
 Note: If you want to use a different command instead of date, you can simply replace date with the desired command.
 
+We also need a cronjob to shutdown the SBC at a regular interval. This will only run on the SBCs that are not being tested with hard shutdowns
+```
+*/3 * * * * sudo shutdown
+```
+
+
 You can also use the crontab command to view and manage your cron jobs. For example, to view your current cron jobs, you can use the following command:
 
 ```
