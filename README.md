@@ -7,12 +7,14 @@ _The following document outlines the procedure & rational for power cycle testin
  - Establish the difference between SD cards and EMMC boot drive options.
  - Establish difference between hard shut down (Power removed suddenly) and Sheduled shutdown.
  - Compare performance when SBC is powered via 12v input or regulated 5v direct to the 5v rail.
- - Aim to complete between ___ and ___ number of hard shutdown power cycles.
+ - Aim to complete approximately 200 hard shutdown power cycles.
  
 
 ## Timeframe
-In order to complete between ___ and ___ hard shutdowns, with one power on/power off cycle taking 30 minutes to complete, 
-the test should be run for between ___ and ___ total hours, with a check once daily for failed units.
+In order to complete between 192 and 240 hard shutdowns, with one power on/power off cycle taking 30 minutes to complete, 
+the test should be run for between 96 and 120 total hours, with a check once daily for failed units.
+This is anticipated to take one single work week, with the test starting on Monday morning, close to 0900 hours,
+and finishing before lunchtime on Friday, to enable data to be recorded as soon as the test is finished.
  
 
 ## Test Articles
