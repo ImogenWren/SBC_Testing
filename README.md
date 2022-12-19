@@ -33,6 +33,15 @@ _The following configurations will be tested under the same conditions, preferab
 - SBCs that are being used with SOFT reset will have an additional cronjob to shut down every 10 minutes. This means they will cycle on for 10 mins, shutdown,
 then be rebooted by a power cycle that happens with the rest of the SBCs, ensuring that the same number of power down cycles are performed.
 
+## Cronjob
+_First cronjob is installed on each SBC_
+```
+*/3 * * * * date >> ./remotelabs/SBC_TEST.log
+```
+_Second cronjob is installed on control 2, to soft shutdown SBC before power is removed
+```
+*/10 * * * * sudo shutdown
+```
 ## Test Setup
 - All SBCs given a unique and incremented IP Address (192.168.1.X) and a logical hostname mirroring the IP
 - All SBCs are plugged into a LAN via network switches
