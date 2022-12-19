@@ -12,7 +12,7 @@ _The following document outlines the procedure & rational for power cycle testin
 
 ## Timeframe
 In order to complete between ___ and ___ hard shutdowns, with one power on/power off cycle taking 30 minutes to complete, 
-the test should be run for between ___ and ___ hours.
+the test should be run for between ___ and ___ total hours, with a check once daily for failed units.
  
 
 ## Test Articles
