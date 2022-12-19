@@ -55,7 +55,7 @@ _Second cronjob is installed on control 2, to soft shutdown SBC before power is 
 	- Install/test function of cronjob tasks
 	- Shutdown and move to test rig
 
-- Power up all SBCs and test LAN by pinging each SBC. (Script could be written to automate this process)
+- Power up all SBCs and test LAN by pinging each SBC. (See testPing.py script)
 	- Note any SBCs that do not reply
 - SSH into and soft shutdown each SBC
 
