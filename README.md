@@ -36,7 +36,7 @@ _The following configurations will be tested under the same conditions, preferab
 then be rebooted by a power cycle that happens with the rest of the SBCs, ensuring that the same number of power down cycles are performed.
 
 ## Cronjob
-_First cronjob is installed on each SBC_
+_First cronjob is installed on each SBC to log data and time periodically_
 ```
 */3 * * * * date >> ./remotelabs/SBC_TEST.log
 ```
@@ -44,9 +44,9 @@ _Second cronjob is installed on control 2, to soft shutdown SBC before power is 
 ```
 */10 * * * * sudo shutdown
 ```
-_Alternative 2nd cronjob to also save shutdown notice to the log_
+_Alternative 2nd cronjob to also save shutdown notice to the log_ **Tested & Working**
 ```
-*/4 * * * * { echo "Shutdown Inititated @"; date; } | tr "\n" " "  >> ./remotelabs/SBC_TEST.log; sudo shutdown
+*/10 * * * * { echo "Shutdown Inititated @"; date; } | tr "\n" " "  >> ./remotelabs/SBC_TEST.log; sudo shutdown
 ```
 ## Test Setup
 - All SBCs given a unique and incremented IP Address (192.168.1.X) and a logical hostname mirroring the IP
