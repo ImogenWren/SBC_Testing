@@ -24,9 +24,9 @@ _The following configurations will be tested under the same conditions, preferab
 |ODroid 		| EMMC			| 12v DC to Vin jack	|   x2		| 	Yes	|
 |ODroid 		| SD Card		| 5v Rail		|   x2		| 	Yes	|
 |ODroid 		| EMMC			| 5v Rail		|   x2		| 	Yes	|
-|Raspberry Pi	| SD Card			| USB Power		|	x1	|	Yes	|
-|ODroid			| EMMC			| 5v Rail?		|	x1	|	No 	|
-|ODroid			| 			|        		|	x1	|SOFT SHUTDOWN - Cron Task to perform safe shutdown & Reboot as a control?    |
+|Raspberry Pi	| SD Card			| USB Power		|x1		|Yes - Control 0	|
+|ODroid			| EMMC			| 5v Rail?		|x1	|No - Control 1	|
+|ODroid			| 			|        		|x1	|SOFT SHUTDOWN - Cron Task to perform safe shutdown. Reboots with power strip - Control 2 |
 
 - Each SBC will have been set up from a known configuration, I.E. a formatted storage medium flashed with the lastest stable OS version.
 - Each SBC will be running a cronjob to log the current time to a file every 3 minutes saved at `./remotelabs/SCB_TEST.log`
