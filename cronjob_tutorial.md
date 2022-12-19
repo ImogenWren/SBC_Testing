@@ -31,3 +31,11 @@ To remove all of your cron jobs, you can use the following command:
 crontab -r
 ```
 For more information about cron and crontab, you can refer to the crontab man page by running man crontab in a terminal window.
+
+
+Based on another answer given by OpenAI Chat, the cronjob has been modified to:
+
+```
+*/5 * * * * i=0; do i=$((i+1));done; date $i >> /remotelabs/SBC_TESTLOG.log
+```
+With the aim of adding an incrementing number to the start of each line in the log file.
