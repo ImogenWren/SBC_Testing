@@ -39,3 +39,9 @@ Based on another answer given by OpenAI Chat, the cronjob has been modified to:
 */5 * * * * i=0; do i=$((i+1));done; date $i >> /remotelabs/SBC_TESTLOG.log
 ```
 With the aim of adding an incrementing number to the start of each line in the log file.
+
+
+NOTE: OpenAI Forgot to add the step to enable the cronjob with:
+```
+sudo systemctl enable cron
+```
