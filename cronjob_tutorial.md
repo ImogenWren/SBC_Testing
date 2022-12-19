@@ -10,7 +10,7 @@ To create a cron job that logs the date and time every 5 minutes on an Ubuntu sy
 
 Open a terminal window and type the following command to open the crontab file for editing:
 ```
-sudo crontab -e
+crontab -u username -e
 ```
 This will open the crontab file in the default text editor for your system.
 
