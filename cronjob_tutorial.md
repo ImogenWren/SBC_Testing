@@ -1,6 +1,6 @@
 # Cron Job Tutorial
 
-***Note:***_This tutorial was generated with OpenAI Chat as an experiment. The prompt given was
+***Note:*** _This tutorial was generated with OpenAI Chat as an experiment. The prompt given was
 "Please write a cronjob for ubuntu to log the date and time every 5 minutes. Explain the steps required to get it working"_
 
 To create a cron job that logs the date and time every 5 minutes on an Ubuntu system, follow these steps:
