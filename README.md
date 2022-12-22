@@ -22,12 +22,12 @@ _The following configurations will be tested under the same conditions, preferab
 
 | SBC 			| Memory/Storage    	|Power Supply		| Quantity 	| Power Cycle	|
 |---			|---			|---			|---		|---		|
-|ODroid 		| SD Card		| 12v DC to Vin jack	|   x2		| 	Yes	|
-|ODroid 		| EMMC			| 12v DC to Vin jack	|   x2		| 	Yes	|
-|ODroid 		| SD Card		| 5v Rail		|   x2		| 	Yes	|
-|ODroid 		| EMMC			| 5v Rail		|   x2		| 	Yes	|
-|Raspberry Pi	| SD Card			| USB Power		|x1		|Yes - Control 0	|
-|ODroid			| EMMC			| 5v Rail?		|x1	|No - Control 1	|
+|ODroid 		| SD Card		| 12v DC to Vin jack(2A)|   x2		| 	Yes	|
+|ODroid 		| EMMC			| 12v DC to Vin jack(2A)|   x2		| 	Yes	|
+|ODroid 		| SD Card		| 5v Rail (500mA Max!)	|   x2		| 	Yes	|
+|ODroid 		| EMMC			| 5v Rail (500mA Max!)	|   x2		| 	Yes	|
+|Raspberry Pi	| SD Card			| USB Power Supply		|x1		|Yes - Control 0	|
+|ODroid			| EMMC			| 5v Rail (500mA Max!)	|x1	|No - Control 1	|
 |ODroid			| EMMC (Dont have enough to run concurrently - SD card for now|        		|x1	|SOFT SHUTDOWN - Cron Task to perform safe shutdown. Reboots with power strip - Control 2 |
 
 - Each SBC will have been set up from a known configuration, I.E. a formatted storage medium flashed with the lastest stable OS version.
@@ -69,6 +69,7 @@ Ensure that folder exists for log file - crontab will not work if folder does no
 
 ### Before starting
 - Each SBC is checked for basic operation and set up:
+	- Power SBC with suitable power supply. (12v 2A for Odroid, 5v Rpi Power Supply for Rpi)	 
  	- Set Static IP, hostname and login details
 	- Login Details & IP labeled onto SBC
 	- Install/test function of cronjob tasks
