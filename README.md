@@ -51,6 +51,10 @@ _Alternative 2nd cronjob to also save shutdown notice to the log_ **Tested & Wor
 ```
 */10 * * * * { echo "Shutdown Inititated @"; date; } | tr "\n" " "  >> ./remotelabs/SBC_TEST.log; sudo shutdown
 ```
+
+Ensure Cronjobs are active:
+`sudo systemctl enable cron`
+
 ## Test Setup
 - All SBCs given a unique and incremented IP Address (192.168.1.X) and a logical hostname mirroring the IP
 - All SBCs are plugged into a LAN via network switches
