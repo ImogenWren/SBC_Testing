@@ -57,9 +57,13 @@ Ensure Cronjobs are active:
 Check Cronjobs:
 `crontab -l` <br>
 
+Ensure that folder exists for log file - crontab will not work if folder does not exist.
+`mkdir remotelabs` 
+
 ## Test Setup
 - All SBCs given a unique and incremented IP Address (192.168.1.X) and a logical hostname mirroring the IP
 - All SBCs are plugged into a LAN via network switches
+- Engineering Laptop set to static ip `192.168.1.100`
 
 ## Test Procedure
 
