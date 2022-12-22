@@ -53,7 +53,9 @@ _Alternative 2nd cronjob to also save shutdown notice to the log_ **Tested & Wor
 ```
 
 Ensure Cronjobs are active:
-`sudo systemctl enable cron`
+`sudo systemctl enable cron` <br>
+Check Cronjobs:
+`crontab -l` <br>
 
 ## Test Setup
 - All SBCs given a unique and incremented IP Address (192.168.1.X) and a logical hostname mirroring the IP
