@@ -20,7 +20,7 @@ and finishing before lunchtime on Friday, to enable data to be recorded as soon 
 ## Test Articles
 _The following configurations will be tested under the same conditions, preferably concurrently_
 
-| SBC 			| Memory/Storage    	|Power Supply		| Quantity 	| Power Cycle	|
+| SBC 			| Memory/Storage    	|Power Supply		| Quantity 	| Power Cycle	| 
 |---			|---			|---			|---		|---		|
 |ODroid 		| SD Card		| 12v DC to Vin jack(2A)|   x2		| 	Yes	|
 |ODroid 		| EMMC			| 12v DC to Vin jack(2A)|   x2		| 	Yes	|
@@ -103,7 +103,12 @@ Ensure that folder exists for log file - crontab will not work if folder does no
 	
 - Record results and evaluate options to reduce risk of memory corruption in deployed systems.
 
+# SBC Table
 
+| SBC Type | User | Hostname | Memory | Power | IP |
+|---		|---	|---	|---	|---	|---	|
+| Raspberry Pi	| imogen |pi01  | SD Card | Rpi PSU | 192.168.1.1 |
+| oDroid	| odroid|odroid | emmc| 12v	| 192.168.1.2|
 
 
 
