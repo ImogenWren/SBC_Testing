@@ -62,6 +62,8 @@ Ensure that folder exists for log file - crontab will not work if folder does no
 
 ## Test Setup
 - All SBCs given a unique and incremented IP Address (192.168.1.X) and a logical hostname mirroring the IP
+	- https://www.cyberciti.biz/faq/ubuntu-change-hostname-command/ 
+	- https://ubuntu.com/server/docs/network-configuration	
 - All SBCs are plugged into a LAN via network switches
 - Enable SSH On all SBCs
 - Engineering Laptop set to static ip `192.168.1.100`
