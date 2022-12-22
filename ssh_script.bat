@@ -1,9 +1,11 @@
 @echo off
-title raspi3_ssh
+title Static IP SHH
 :start
-echo Attempting Connection with obentu.local as user wren
-echo for help see: https://www.makeuseof.com/tag/essential-windows-cmd-commands/
-ssh wren@obentu.local
+echo Attempting Connection with Static IP as user imogen
+set choice=
+set /p choice="Enter Number of SBC:"
+echo Attempting Connection with 192.168.1.'%choice%' as user imogen
+ssh imogen@192.168.1."%choice%"
 echo Closing Connection...
 set choice=
 set /p choice="Do you want to restart? Press 'y' and enter for Yes: "

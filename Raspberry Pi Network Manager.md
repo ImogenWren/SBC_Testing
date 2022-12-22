@@ -65,6 +65,10 @@ Connects may be added using nmcli, for example `nmcli con add con-name HOMEOFFIC
 ## THIS RIGHT HERE USE THIS
 `sudo nmtui` provides a text user interface that allows easy creation of wifi connection.
 
+_set up example_
+![image](https://user-images.githubusercontent.com/97303986/209116617-5f25a02e-8da5-4b25-86fc-d1ee80c988b3.png)
+
+
 ### Edit a connection.
 Add >> wifi
 Give your connection a name and set the fields needed for your access point.

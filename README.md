@@ -20,15 +20,15 @@ and finishing before lunchtime on Friday, to enable data to be recorded as soon 
 ## Test Articles
 _The following configurations will be tested under the same conditions, preferably concurrently_
 
-| SBC 			| Memory/Storage    	|Power Supply		| Quantity 	| Power Cycle	|
+| SBC 			| Memory/Storage    	|Power Supply		| Quantity 	| Power Cycle	| 
 |---			|---			|---			|---		|---		|
-|ODroid 		| SD Card		| 12v DC to Vin jack	|   x2		| 	Yes	|
-|ODroid 		| EMMC			| 12v DC to Vin jack	|   x2		| 	Yes	|
-|ODroid 		| SD Card		| 5v Rail		|   x2		| 	Yes	|
-|ODroid 		| EMMC			| 5v Rail		|   x2		| 	Yes	|
-|Raspberry Pi	| SD Card			| USB Power		|x1		|Yes - Control 0	|
-|ODroid			| EMMC			| 5v Rail?		|x1	|No - Control 1	|
-|ODroid			| 			|        		|x1	|SOFT SHUTDOWN - Cron Task to perform safe shutdown. Reboots with power strip - Control 2 |
+|ODroid 		| SD Card		| 12v DC to Vin jack(2A)|   x2		| 	Yes	|
+|ODroid 		| EMMC			| 12v DC to Vin jack(2A)|   x2		| 	Yes	|
+|ODroid 		| SD Card		| 5v Rail (500mA Max!)	|   x2		| 	Yes	|
+|ODroid 		| EMMC			| 5v Rail (500mA Max!)	|   x2		| 	Yes	|
+|Raspberry Pi	| SD Card			| USB Power Supply		|x1		|Yes - Control 0	|
+|ODroid			| EMMC			| 5v Rail (500mA Max!)	|x1	|No - Control 1	|
+|ODroid			| EMMC (Dont have enough to run concurrently - SD card for now|        		|x1	|SOFT SHUTDOWN - Cron Task to perform safe shutdown. Reboots with power strip - Control 2 |
 
 - Each SBC will have been set up from a known configuration, I.E. a formatted storage medium flashed with the lastest stable OS version.
 - Each SBC will be running a cronjob to log the current time to a file every 3 minutes saved at `./remotelabs/SCB_TEST.log`
@@ -36,6 +36,9 @@ _The following configurations will be tested under the same conditions, preferab
 then be rebooted by a power cycle that happens with the rest of the SBCs, ensuring that the same number of power down cycles are performed.
 
 ## Cronjob
+To Edit Cronjob file: 
+`crontab -u imogen -e` <br>
+
 _First cronjob is installed on each SBC to log data and time periodically_
 ```
 */3 * * * * date >> ./remotelabs/SBC_TEST.log
@@ -48,14 +51,28 @@ _Alternative 2nd cronjob to also save shutdown notice to the log_ **Tested & Wor
 ```
 */10 * * * * { echo "Shutdown Inititated @"; date; } | tr "\n" " "  >> ./remotelabs/SBC_TEST.log; sudo shutdown
 ```
+
+Ensure Cronjobs are active:
+`sudo systemctl enable cron` <br>
+Check Cronjobs:
+`crontab -l` <br>
+
+Ensure that folder exists for log file - crontab will not work if folder does not exist.
+`mkdir remotelabs` 
+
 ## Test Setup
 - All SBCs given a unique and incremented IP Address (192.168.1.X) and a logical hostname mirroring the IP
+	- https://www.cyberciti.biz/faq/ubuntu-change-hostname-command/ 
+	- https://ubuntu.com/server/docs/network-configuration	
 - All SBCs are plugged into a LAN via network switches
+- Enable SSH On all SBCs
+- Engineering Laptop set to static ip `192.168.1.100`
 
 ## Test Procedure
 
 ### Before starting
 - Each SBC is checked for basic operation and set up:
+	- Power SBC with suitable power supply. (12v 2A for Odroid, 5v Rpi Power Supply for Rpi)	 
  	- Set Static IP, hostname and login details
 	- Login Details & IP labeled onto SBC
 	- Install/test function of cronjob tasks
@@ -89,7 +106,12 @@ _Alternative 2nd cronjob to also save shutdown notice to the log_ **Tested & Wor
 	
 - Record results and evaluate options to reduce risk of memory corruption in deployed systems.
 
+# SBC Table
 
+| SBC Type | User | Hostname | Memory | Power | IP |
+|---		|---	|---	|---	|---	|---	|
+| Raspberry Pi	| imogen |pi01  | SD Card | Rpi PSU | 192.168.1.1 |
+| oDroid	| odroid|odroid02 | emmc| 12v	| 192.168.1.2|
 
 
 
