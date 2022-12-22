@@ -36,8 +36,9 @@ _The following configurations will be tested under the same conditions, preferab
 then be rebooted by a power cycle that happens with the rest of the SBCs, ensuring that the same number of power down cycles are performed.
 
 ## Cronjob
-To Edit Cronjob file:
-`crontab -u imogen -e`
+To Edit Cronjob file: 
+`crontab -u imogen -e` <br>
+
 _First cronjob is installed on each SBC to log data and time periodically_
 ```
 */3 * * * * date >> ./remotelabs/SBC_TEST.log
