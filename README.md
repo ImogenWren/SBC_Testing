@@ -73,7 +73,8 @@ Ensure that folder exists for log file - crontab will not work if folder does no
 - All SBCs are plugged into a LAN via network switches
 - Enable SSH On all SBCs
 - Ensure connection to wifi to set date and time correctly. NOTE: Issue with interfacing with university internet, could use additional Rpi as router but scope is too large. Log times might just be wrong, or set time & date manually https://www.cyberciti.biz/faq/howto-set-date-time-from-linux-command-prompt/
--
+- `date --set="STRING"`
+- `date --set="2 OCT 2006 18:00:00`
 - Engineering Laptop set to static ip `192.168.1.100`
 
 ## Test Procedure
