@@ -35,6 +35,25 @@ _The following configurations will be tested under the same conditions, preferab
 - SBCs that are being used with SOFT reset will have an additional cronjob to shut down every 10 minutes. This means they will cycle on for 10 mins, shutdown,
 then be rebooted by a power cycle that happens with the rest of the SBCs, ensuring that the same number of power down cycles are performed.
 
+## Test Setup
+- All SBCs given a unique and incremented IP Address (192.168.1.X) and a logical hostname mirroring the IP
+	- https://www.cyberciti.biz/faq/ubuntu-change-hostname-command/ 
+		- Type the following command to edit /etc/hostname using nano or vi text editor: 
+			`sudo nano /etc/hostname`
+		- Delete the old name and setup new name.
+		- Next Edit the /etc/hosts file
+			`sudo nano /etc/hosts`
+		- Reboot the system to changes take effect: `sudo reboot`.
+	- https://ubuntu.com/server/docs/network-configuration	
+- All SBCs are plugged into a LAN via network switches
+- Enable SSH On all SBCs
+- Ensure connection to wifi to set date and time correctly. NOTE: Issue with interfacing with university internet, could use additional Rpi as router but scope is too large. Log times might just be wrong, or set time & date manually https://www.cyberciti.biz/faq/howto-set-date-time-from-linux-command-prompt/
+- `date --set="STRING"`
+- `sudo date --set="2 OCT 2006 18:00:00`
+- Ensure Cronjobs set up as below
+
+- Engineering Laptop set to static ip `192.168.1.100`
+
 ## Cronjob
 To Edit Cronjob file: 
 `crontab -u imogen -e` <br>
@@ -59,23 +78,6 @@ Check Cronjobs:
 
 Ensure that folder exists for log file - crontab will not work if folder does not exist.
 `mkdir remotelabs` 
-
-## Test Setup
-- All SBCs given a unique and incremented IP Address (192.168.1.X) and a logical hostname mirroring the IP
-	- https://www.cyberciti.biz/faq/ubuntu-change-hostname-command/ 
-		- Type the following command to edit /etc/hostname using nano or vi text editor: 
-			`sudo nano /etc/hostname`
-		- Delete the old name and setup new name.
-		- Next Edit the /etc/hosts file
-			`sudo nano /etc/hosts`
-		- Reboot the system to changes take effect: `sudo reboot`.
-	- https://ubuntu.com/server/docs/network-configuration	
-- All SBCs are plugged into a LAN via network switches
-- Enable SSH On all SBCs
-- Ensure connection to wifi to set date and time correctly. NOTE: Issue with interfacing with university internet, could use additional Rpi as router but scope is too large. Log times might just be wrong, or set time & date manually https://www.cyberciti.biz/faq/howto-set-date-time-from-linux-command-prompt/
-- `date --set="STRING"`
-- `date --set="2 OCT 2006 18:00:00`
-- Engineering Laptop set to static ip `192.168.1.100`
 
 ## Test Procedure
 
