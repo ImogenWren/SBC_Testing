@@ -63,6 +63,12 @@ Ensure that folder exists for log file - crontab will not work if folder does no
 ## Test Setup
 - All SBCs given a unique and incremented IP Address (192.168.1.X) and a logical hostname mirroring the IP
 	- https://www.cyberciti.biz/faq/ubuntu-change-hostname-command/ 
+		- Type the following command to edit /etc/hostname using nano or vi text editor: 
+			`sudo nano /etc/hostname`
+		- Delete the old name and setup new name.
+		- Next Edit the /etc/hosts file
+			`sudo nano /etc/hosts`
+		- Reboot the system to changes take effect: `sudo reboot`.
 	- https://ubuntu.com/server/docs/network-configuration	
 - All SBCs are plugged into a LAN via network switches
 - Enable SSH On all SBCs
@@ -81,6 +87,7 @@ Ensure that folder exists for log file - crontab will not work if folder does no
 - Power up all SBCs and test LAN by pinging each SBC. (See testPing.py script)
 	- Note any SBCs that do not reply
 - SSH into and soft shutdown each SBC
+- 
 
 
 - Each SBC (Except control) is plugged into an unpowered power strip.
