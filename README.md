@@ -122,12 +122,13 @@ Ensure that folder exists for log file - crontab will not work if folder does no
 | SBC Type 	| User 		| Hostname 	| Memory 	| Power 	| IP 		|
 |---		|---		|---		|---		|---		|---		|
 | Raspberry Pi	| imogen 	|pi01  		| SD Card 	| Rpi PSU 	| 192.168.1.1 	|
-| oDroid	| odroid	|odroid02 	| emmc		| 12v		| 192.168.1.2	|
+| oDroid	| odroid	| odroid02 	| EMMC		| 12v		| 192.168.1.2	|
 | oDroid	| odroid	| odroid03	| EMMC		| 12v 		| 192.168.1.3	|
-| oDroid	| odroid	| odroid03	| EMMC		| 12v 		| 192.168.1.4	|
-| oDroid	| odroid	| odroid03	| EMMC		| 12v 		| 192.168.1.5	|
-| oDroid	| odroid	| odroid03	| EMMC		| 12v 		| 192.168.1.6	|
-| oDroid	| odroid	| odroid03	| SD Card	| 12v 		| 192.168.1.7	|
+| oDroid	| odroid	| odroid04	| EMMC		| 12v 		| 192.168.1.4	|
+| oDroid	| odroid	| odroid05	| EMMC		| 12v 		| 192.168.1.5	|
+| oDroid	| odroid	| odroid06	| EMMC		| 12v 		| 192.168.1.6	|
+| oDroid	| odroid	| odroid07	| SD Card	| 12v 		| 192.168.1.7	|
+| oDroid	| odroid	| odroid08	| SD Card	| 12v 		| 192.168.1.8	|
 
 
 
