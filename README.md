@@ -104,14 +104,14 @@ Ensure that folder exists for log file - crontab will not work if folder does no
 - Each SBC is powered individually and checked for memory corruption.
 	- Copy log from `./remotelabs/SCB_TEST.log` for later analysis
 	
-- Record results and evaluate options to reduce risk of memory corruption in deployed systems.
-
-# SBC Table
+ Record results and evaluate options to reduce risk of memory corruption in deployed systems.
+ SBC Table
 
 | SBC Type | User | Hostname | Memory | Power | IP |
 |---		|---	|---	|---	|---	|---	|
 | Raspberry Pi	| imogen |pi01  | SD Card | Rpi PSU | 192.168.1.1 |
 | oDroid	| odroid|odroid02 | emmc| 12v	| 192.168.1.2|
+|oDroid		| odroid| odroid03| EMMC | 12v  |192.168.1.3|
 
 
 
