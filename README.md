@@ -72,6 +72,7 @@ Ensure that folder exists for log file - crontab will not work if folder does no
 	- https://ubuntu.com/server/docs/network-configuration	
 - All SBCs are plugged into a LAN via network switches
 - Enable SSH On all SBCs
+- Ensure connection to wifi to set date and time correctly. NOTE: Issue with interfacing with university internet, use mobile datalink for initial setup
 - Engineering Laptop set to static ip `192.168.1.100`
 
 ## Test Procedure
