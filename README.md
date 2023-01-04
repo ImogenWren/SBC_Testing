@@ -119,11 +119,15 @@ Ensure that folder exists for log file - crontab will not work if folder does no
  Record results and evaluate options to reduce risk of memory corruption in deployed systems.
  SBC Table
 
-| SBC Type | User | Hostname | Memory | Power | IP |
-|---		|---	|---	|---	|---	|---	|
-| Raspberry Pi	| imogen |pi01  | SD Card | Rpi PSU | 192.168.1.1 |
-| oDroid	| odroid|odroid02 | emmc| 12v	| 192.168.1.2|
-|oDroid		| odroid| odroid03| EMMC | 12v  |192.168.1.3|
+| SBC Type 	| User 		| Hostname 	| Memory 	| Power 	| IP 		|
+|---		|---		|---		|---		|---		|---		|
+| Raspberry Pi	| imogen 	|pi01  		| SD Card 	| Rpi PSU 	| 192.168.1.1 	|
+| oDroid	| odroid	|odroid02 	| emmc		| 12v		| 192.168.1.2	|
+| oDroid	| odroid	| odroid03	| EMMC		| 12v 		| 192.168.1.3	|
+| oDroid	| odroid	| odroid03	| EMMC		| 12v 		| 192.168.1.4	|
+| oDroid	| odroid	| odroid03	| EMMC		| 12v 		| 192.168.1.5	|
+| oDroid	| odroid	| odroid03	| EMMC		| 12v 		| 192.168.1.6	|
+| oDroid	| odroid	| odroid03	| SD Card	| 12v 		| 192.168.1.7	|
 
 
 
