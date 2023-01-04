@@ -56,7 +56,7 @@ then be rebooted by a power cycle that happens with the rest of the SBCs, ensuri
 
 ## Cronjob
 To Edit Cronjob file: 
-`crontab -u imogen -e` <br>
+`crontab -u odroid -e` <br>
 
 _First cronjob is installed on each SBC to log data and time periodically_
 ```
