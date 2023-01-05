@@ -26,9 +26,9 @@ _The following configurations will be tested under the same conditions, preferab
 |ODroid 		| EMMC			| 12v DC to Vin jack(2A)|   x2		| 	Yes	|
 |ODroid 		| SD Card		| 5v Rail (500mA Max!)	|   x2		| 	Yes	|
 |ODroid 		| EMMC			| 5v Rail (500mA Max!)	|   x2		| 	Yes	|
-|Raspberry Pi	| SD Card			| USB Power Supply		|x1		|Yes - Control 0	|
-|ODroid			| EMMC			| 5v Rail (500mA Max!)	|x1	|No - Control 1	|
-|ODroid			| EMMC (Dont have enough to run concurrently - SD card for now|        		|x1	|SOFT SHUTDOWN - Cron Task to perform safe shutdown. Reboots with power strip - Control 2 |
+|Raspberry Pi	| SD Card			| USB Power Supply	|x1		|Yes - Control 0	|
+|ODroid			| EMMC			| 5v Rail (500mA Max!)	|x1		|No - Control 1	|
+|ODroid			| EMMC (Dont have enough to run concurrently - SD card for now|        	|x1	|SOFT SHUTDOWN - Cron Task to perform safe shutdown. Reboots with power strip - Control 2 |
 
 - Each SBC will have been set up from a known configuration, I.E. a formatted storage medium flashed with the lastest stable OS version.
 - Each SBC will be running a cronjob to log the current time to a file every 3 minutes saved at `./remotelabs/SCB_TEST.log`
@@ -117,19 +117,22 @@ Ensure that folder exists for log file - crontab will not work if folder does no
 	- Copy log from `./remotelabs/SCB_TEST.log` for later analysis
 	
  Record results and evaluate options to reduce risk of memory corruption in deployed systems.
- SBC Table
+ 
+ # SBC Table
 
 | SBC Type 	| User 		| Hostname 	| Memory 	| Power 	| IP 		|
 |---		|---		|---		|---		|---		|---		|
-| Raspberry Pi	| imogen 	|pi01  		| SD Card 	| Rpi PSU 	| 192.168.1.1 	|
+| Raspberry Pi	| imogen 	| pi01  	| SD Card 	| Rpi PSU 	| 192.168.1.1 	|
 | oDroid	| odroid	| odroid02 	| EMMC		| 12v		| 192.168.1.2	|
 | oDroid	| odroid	| odroid03	| EMMC		| 12v 		| 192.168.1.3	|
-| oDroid	| odroid	| odroid04	| EMMC		| 12v 		| 192.168.1.4	|
-| oDroid	| odroid	| odroid05	| EMMC		| 12v 		| 192.168.1.5	|
-| oDroid	| odroid	| odroid06	| EMMC		| 12v 		| 192.168.1.6	|
+| oDroid	| odroid	| odroid04	| EMMC		| 5v		| 192.168.1.4	|
+| oDroid	| odroid	| odroid05	| EMMC		| 5v - No Shutdown| 192.168.1.5	|
+| oDroid	| odroid	| odroid06	| EMMC		| 12v - Soft Shutdown| 192.168.1.6|
 | oDroid	| odroid	| odroid07	| SD Card	| 12v 		| 192.168.1.7	|
 | oDroid	| odroid	| odroid08	| SD Card	| 12v 		| 192.168.1.8	|
-
+| oDroid	| odroid	| odroid09	| SD Card	| 5v 		| 192.168.1.9	|
+| oDroid	| odroid	| odroid10	| SD Card	| 5v  - Soft Shutdown	| 192.168.1.10	|
+| oDroid	| odroid	| odroid11	| SD Card	| 12v - No Shutdown	| 192.168.1.11	|
 
 
 # Notes
