@@ -79,7 +79,7 @@ Check Cronjobs:
 Ensure that folder exists for log file - crontab will not work if folder does not exist.
 `mkdir remotelabs` 
 
-NOTE: Issue with shutdown command on odroid. Because of course there is https://forum.odroid.com/viewtopic.php?t=34015
+NOTE: Issue with shutdown command on odroid. Because of course there is https://forum.odroid.com/viewtopic.php?t=34015 - could be a sudoers issue
 
 ## Test Procedure
 
