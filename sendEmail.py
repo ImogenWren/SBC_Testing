@@ -1,6 +1,6 @@
 # import packages
 # below packages are built-in - no need to install anything new!
-# yupi :)
+#https://mljar.com/blog/python-send-email/
 import smtplib
 from email.message import EmailMessage
 
