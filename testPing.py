@@ -43,6 +43,10 @@ def testPing(ip_list):
     print(*up_list, sep='\n')
     print("\nThe following Hosts are OFFLINE:")
     print(*down_list, sep='\n')
+    if down_list:
+        print("Not all Hosts Alive")
+    else:
+        print("ALL HOSTS ALIVE")
     if up_list:
         return True
     else:
