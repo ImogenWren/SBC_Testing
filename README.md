@@ -79,6 +79,11 @@ Check Cronjobs:
 Ensure that folder exists for log file - crontab will not work if folder does not exist.
 `mkdir remotelabs` 
 
+NOTE: Issue with shutdown command on odroid. Because of course there is https://forum.odroid.com/viewtopic.php?t=34015 - could be a sudoers issue
+https://askubuntu.com/questions/173924/how-to-run-a-cron-job-using-the-sudo-command - going the quick and dirty route of piping the password to the cronjob.
+If expanding on methodology, or connecting SBCs to WAN then use safer option of shutdown as root crontask. - NOTE does not work. going with installing cronjob as root
+`sudo crontab -e`
+
 ## Test Procedure
 
 ### Before starting
