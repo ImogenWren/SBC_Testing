@@ -38,12 +38,12 @@ then be rebooted by a power cycle that happens with the rest of the SBCs, ensuri
 ## Test Setup
 - All SBCs given a unique and incremented IP Address (192.168.1.X) and a logical hostname mirroring the IP
 	- https://www.cyberciti.biz/faq/ubuntu-change-hostname-command/ 
-		- Type the following command to edit /etc/hostname using nano or vi text editor: 
+		- Type the following command to edit /etc/hostname using nano or vi text editor: <br>
 			`sudo nano /etc/hostname`
 		- Delete the old name and setup new name.
-		- Next Edit the /etc/hosts file
+		- Next Edit the /etc/hosts file <br>
 			`sudo nano /etc/hosts`
-		- Reboot the system to changes take effect: `sudo reboot`.
+		- Reboot the system to changes take effect: <br> `sudo reboot`.
 	- https://ubuntu.com/server/docs/network-configuration	
 - All SBCs are plugged into a LAN via network switches
 - Enable SSH On all SBCs
