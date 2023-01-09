@@ -13,7 +13,8 @@ Pre Test:
 ## Test Log
 
 - Test Started at 09:57   09/01/23
-- All Hosts active EXCEPT odroid08 which will be replaced asap
+- All Hosts active:
+- Host 8 still looking unreliable so will be replaced ASAP 
 - 
 
 
