@@ -22,5 +22,7 @@ Pre Test:
 
 ## Results
 
+- As of 16:56  09/01/23 All Hosts are online
+
 |SBC hostname |  Still Active | If Inactive, Last known time of Operation |
 |---|---|---|
