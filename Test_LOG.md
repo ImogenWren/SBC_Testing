@@ -15,6 +15,7 @@ Pre Test:
 - Test Started at 09:57   09/01/23
 - All Hosts active:
 - Host 8 still looking unreliable so will be replaced ASAP 
+- odroid08 replaced at 10:31 09/01/23 - New one seems to be more reliable
 - 
 
 
