@@ -6,4 +6,4 @@
 
 
 cd /
-sudo python3 ledTest.py
+python3 ./ledTest.py
