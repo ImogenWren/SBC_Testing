@@ -24,4 +24,14 @@ The ideal scenario is an additional SBC to act as the test coordinator. This can
 - Python script will also log only OFFLINE hosts to offline_log.log
 	- Script will log ip, host and times of non responsive hosts.
 	- NOTE: odroid 6 and 10 will sometimes be off, but should reset with the rest of the SBCs
+
+
+
+Problem 1:
+- Running Crontab on bootup - This is solveable I have before just need to work out how I have done kiosks in past.
+
+Problem 2:
+- No Switched power left so test coordinator is always powered.
+- SOLUTION: Voltage sense pin to one of the other switched SBCs. This will be 5v so will need a voltage dividor to drop down to 3.3v to be read by the TC SBC.
+- Use Values 10k and 5.6k for 3.2 logic high
   
