@@ -33,5 +33,5 @@ Problem 1:
 Problem 2:
 - No Switched power left so test coordinator is always powered.
 - SOLUTION: Voltage sense pin to one of the other switched SBCs. This will be 5v so will need a voltage dividor to drop down to 3.3v to be read by the TC SBC.
-- Use Values 10k and 5.6k for 3.2 logic high
+- Use Values 10k and 15k for 3.0 logic high
   
