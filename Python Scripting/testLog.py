@@ -4,7 +4,8 @@ For quickly testing sequential SCBs on a lan to determine if they are all still 
 '''
 
 
-import os
+import platform
+import subprocess
 import time
 from gpiozero import LED, Button
 
@@ -28,7 +29,9 @@ LOOP = True
 led = LED(12)
 v_probe = Button(18, pull_up=False)
 
-
+'''
+Tools
+'''
 def returnDateTime():
     # datetime object containing current date and time
     now = datetime.now()
@@ -58,18 +61,31 @@ def checkPower():
 
 
 def updateLog(up_list, down_list):
+    print("\n\nUpdating Log")
+    deliminator = "\n"
+    up_string = deliminator.join(up_list)
+    down_string = deliminator.join(down_list)
     f = open("testLog.log", "a")
-    f.write(f"\n\nNew Log, Date: {returnDateTime()}:")
-    f.write("\nHosts ALIVE:")
-    f.write(up_list)
-    f.write("Hosts DOWN:")
-    f.write(down_list)
+    f.write(f"\n\nNew Log:\n Date: {returnDateTime()}:")
+    f.write("\nHosts ALIVE:\n")
+    f.write(up_string)
+    f.write("\nHosts DOWN:\n")
+    f.write(down_string)
+    f.write("\n------\n")
     f.close()
 
-
+def ping(host):
+    # Option for the number of packets as a function of
+    param = '-n' if platform.system().lower() == 'windows' else '-c'
+    # Building the command. Ex: "ping -c 1 google.com"
+    command = ['ping', param, '1', host]
+    response = subprocess.call(command) == 0
+    print(response)
+    return response
 
 
 '''
+States
 Topology
 - State Machine
 - One of 3/4 states:
@@ -91,32 +107,37 @@ def initState():
     print("Voltage Detected")
 
 
+
+
 def logState():
+    power_state = True
     print("Starting Ping Test")
     print(f"Scanning range {SUBNET}{IP_START} to {SUBNET}{IP_END}")
-    while checkPower():
+    while power_state == True:
         up_list = []
         down_list = []
         # for ip in ip_list:    # for some reason, this method scans in a random order, but maybe faster?
         for ip in range(IP_START, IP_END + 1):
-            response = os.popen("ping " + SUBNET + f"{ip}").read()
-            if "Received = 4" in response:
-                print(f"UP    " + SUBNET + f"{ip}    Ping Successful, Host is ONLINE")
-                up_list.append(SUBNET + f"{ip}")
+            response = ping(f"{SUBNET}{ip}")
+            if response == True:
+                print(f"UP     {SUBNET}{ip}    Ping Successful, Host is ONLINE")
+                up_list.append(f"{SUBNET}{ip}")
             else:
-                print(f"DOWN  " + SUBNET + f"{ip}    Ping Unsuccessful, Host is OFFLINE.")
-                down_list.append(SUBNET + f"{ip}")
+                print(f"DOWN  {SUBNET}{ip}    Ping Unsuccessful, Host is OFFLINE.")
+                down_list.append(f"{SUBNET}{ip}")
         print("\n\nPing Test Complete")
         print("\nThe following Hosts are ONLINE:")
         print(*up_list, sep='\n')
         print("\nThe following Hosts are OFFLINE:")
         print(*down_list, sep='\n')
-        updateLog(up_list, down_list)
+        power_state = checkPower()
+        if power_state == True:              # Put this fudge fix here so the test results are not logged if power is lost midway between readings
+            updateLog(up_list, down_list)
         if down_list:
-            print("Not all Hosts Alive")
+            print("\nNot all Hosts Alive\n")
         else:
-            print("ALL HOSTS ALIVE")
-    print("Power Loss Detected, Pausing Logging")
+            print("\nALL HOSTS ALIVE\n")
+    print("\nPower Loss Detected, Pausing Logging\n")
 
 
 def waitState():
