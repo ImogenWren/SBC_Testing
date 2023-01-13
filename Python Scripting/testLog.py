@@ -119,12 +119,14 @@ def logState():
         # for ip in ip_list:    # for some reason, this method scans in a random order, but maybe faster?
         for ip in range(IP_START, IP_END + 1):
             response = ping(f"{SUBNET}{ip}")
+            print("-----------------------")
             if response == True:
                 print(f"UP     {SUBNET}{ip}    Ping Successful, Host is ONLINE")
                 up_list.append(f"{SUBNET}{ip}")
             else:
                 print(f"DOWN  {SUBNET}{ip}    Ping Unsuccessful, Host is OFFLINE.")
                 down_list.append(f"{SUBNET}{ip}")
+            print("-----------------------\n")
         print("\n\nPing Test Complete")
         print("\nThe following Hosts are ONLINE:")
         print(*up_list, sep='\n')

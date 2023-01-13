@@ -26,8 +26,6 @@ ONLINE = "8.8.8.8"
 
 LOOP = True
 
-led = LED(12)
-v_probe = Button(18, pull_up=False)
 
 '''
 Tools
@@ -40,24 +38,8 @@ def returnDateTime():
     #print("date and time =", dt_string)
     return dt_string
 
-def control_led(state = 0):
-    led.value = state
-
-def flash_led(repeats = 1, delay = 200):
-    for i in range(repeats):
-        control_led(1)
-        time.sleep(delay)
-        control_led(0)
-        time.sleep(delay)
 
 
-    '''
-    First check if power is on, we do not want to log dead hosts if power is unavailable
-    '''
-def checkPower():
-    power_state = v_probe.value
-    control_led(power_state)
-    return power_state
 
 
 def updateLog(up_list, down_list):
@@ -113,36 +95,34 @@ def logState():
     power_state = True
     print("Starting Ping Test")
     print(f"Scanning range {SUBNET}{IP_START} to {SUBNET}{IP_END}")
-    while True:
-        up_list = []
-        down_list = []
-        # for ip in ip_list:    # for some reason, this method scans in a random order, but maybe faster?
-        for ip in range(IP_START, IP_END + 1):
-            response = ping(f"{SUBNET}{ip}")
-            if response == True:
-                print(f"UP     {SUBNET}{ip}    Ping Successful, Host is ONLINE")
-                up_list.append(f"{SUBNET}{ip}")
-            else:
-                print(f"DOWN  {SUBNET}{ip}    Ping Unsuccessful, Host is OFFLINE.")
-                down_list.append(f"{SUBNET}{ip}")
-        print("\n\nPing Test Complete")
-        print("\nThe following Hosts are ONLINE:")
-        print(*up_list, sep='\n')
-        print("\nThe following Hosts are OFFLINE:")
-        print(*down_list, sep='\n')
 
-        updateLog(up_list, down_list)
-        if down_list:
-            print("\nNot all Hosts Alive\n")
+    up_list = []
+    down_list = []
+    # for ip in ip_list:    # for some reason, this method scans in a random order, but maybe faster?
+    for ip in range(IP_START, IP_END + 1):
+        response = ping(f"{SUBNET}{ip}")
+        print("-----------------------")
+        if response == True:
+            print(f"UP     {SUBNET}{ip}    Ping Successful, Host is ONLINE")
+            up_list.append(f"{SUBNET}{ip}")
         else:
-            print("\nALL HOSTS ALIVE\n")
+            print(f"DOWN  {SUBNET}{ip}    Ping Unsuccessful, Host is OFFLINE.")
+            down_list.append(f"{SUBNET}{ip}")
+        print("-----------------------\n")
+    print("\n\nPing Test Complete")
+    print("\nThe following Hosts are ONLINE:")
+    print(*up_list, sep='\n')
+    print("\nThe following Hosts are OFFLINE:")
+    print(*down_list, sep='\n')
+    updateLog(up_list, down_list)
+    if down_list:
+        print("\nNot all Hosts Alive\n")
+    else:
+        print("\nALL HOSTS ALIVE\n")
     print("\nUser Exited Loop\n")
 
 
-def waitState():
-    print("Waiting for Power Detection")
-    v_probe.wait_for_press(timeout=None)
-    print("Power Detected")
+
 
 
 
