@@ -30,6 +30,26 @@ Pre Test:
 			- Save the file
 			- Delete the file
 			- loop
+			
+## Test Log - End of Test
+- No Failures seen so far.
+- Installing python script to open/write/close file up to 300MB, delete file and start again on every SBC
+	- dataDump.py
+	- Installing Instructions:
+
+- Copy dataDump.py to home directory 
+- `sudo chmod +x dataDump.py`
+- `crontab -e` -> `@reboot sudo python dataDump.py`
+- `nano genData.txt`              # Not Nessissary
+- `sudo chmod 777 genData.txt`    # Might not be nessissary
+- `sudo reboot`
+
+after reboot
+
+- `cat genData.txt` to see if data is being written to file
+
+
+- All SBCs reset to new standard and test started @: 
 
 
 ## Results
@@ -42,7 +62,8 @@ As Of:
 - 16:52 11/01/2023 - All Hosts Alive
 - 10:00 12/01/2023 - All Hosts Alive
 - 13:00 12/01/2023 - All Hosts Alive
-- 16:29 12/01/2023 - All Hosts Alive ;m
+- 16:29 12/01/2023 - All Hosts Alive
+- 10:22 13/01/2023 - All Hosts Alive
 
 
 |SBC hostname |  Still Active | If Inactive, Last known time of Operation |
