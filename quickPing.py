@@ -109,6 +109,7 @@ def logState():
             print(f"DOWN  {SUBNET}{ip}    Ping Unsuccessful, Host is OFFLINE.")
             down_list.append(f"{SUBNET}{ip}")
         print("-----------------------\n")
+        #time.sleep(1)
     print("\n\nPing Test Complete")
     print("\nThe following Hosts are ONLINE:")
     print(*up_list, sep='\n')
@@ -119,7 +120,7 @@ def logState():
         print("\nNot all Hosts Alive\n")
     else:
         print("\nALL HOSTS ALIVE\n")
-    print("\nUser Exited Loop\n")
+
 
 
 
@@ -137,8 +138,12 @@ def main():
         logState()
         i = i + 1
         print("Waiting")
-        time.sleep(10)
-        print("Restarting Loop\n\n")
+        space_string = ""
+        for i in range(10):
+            time.sleep(1)                      
+            print(f". {space_string} ", end="\r")
+            space_string = space_string + ". "
+        print(" Restarting Loop\n\n")
 
 
 
