@@ -13,3 +13,4 @@ https://stackoverflow.com/questions/59344917/cant-open-file-demo-py-errno-2-no-s
 
 3. in crontab file (`sudo crontab -e`), include:
 `sudo python executable.py`
+

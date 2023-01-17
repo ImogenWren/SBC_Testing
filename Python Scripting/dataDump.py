@@ -16,11 +16,13 @@ from datetime import datetime
 
 
 FILENAME = "genData.txt"
-FILEPATH = ""
+FILEPATH = "/home/odroid/"
 
 STRINGDATA = "All Work and No Play Make Jack a Dull Boy"
 
 MAX_FILESIZE_MB = 300
+
+SLEEP_TIME = 0
 
 
 
@@ -104,7 +106,7 @@ def main():
         dumpData(FILENAME, FILEPATH, STRINGDATA)
         if (checkFileSize(FILENAME, FILEPATH, MAX_FILESIZE_MB)):
             deleteData(FILENAME, FILEPATH)
-            #time.sleep(5)  // Just for testing
+            time.sleep(SLEEP_TIME) # // Just for testing
 
 
 

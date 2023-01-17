@@ -34,12 +34,13 @@ Pre Test:
 ## Test Log - End of Test
 - No Failures seen so far.
 - Installing python script to open/write/close file up to 300MB, delete file and start again on every SBC
+- cal
 	- dataDump.py
 	- Installing Instructions:
 
 - Copy dataDump.py to home directory 
 - `sudo chmod +x dataDump.py`
-- `crontab -e` -> `@reboot sudo python dataDump.py`
+- `crontab -e` -> `@reboot sudo python3 dataDump.py`
 - `nano genData.txt`              # Not Nessissary
 - `sudo chmod 777 genData.txt`    # Might not be nessissary
 - `sudo reboot`
@@ -49,10 +50,38 @@ after reboot
 - `cat genData.txt` to see if data is being written to file
 
 
+
+on odroid08
+crontab = `@reboot sudo sh /home/odroid/runDataDump.sh`
+
+#@reboot sudo python3 /home/odroid/dataDump.py
+@reboot sudo sh /home/odroid/runDataDump.sh
+
+sh file:
+```
+#!/bin/sh
+# runDataDump.sh
+# Navigate to home directory, then to this directory.
+# Then execute python script
+# Then navigate back to home
+
+
+cd /
+python3 /home/odroid/dataDump.py
+
+
+```
+
+
+
 - All SBCs reset to new standard and test started @: 
 
+## TEST 2 Log
 
-## Results
+
+
+
+## Results - Test 1
 
 As Of:
 - 16:56 09/01/2023 - All Hosts Alive
@@ -65,6 +94,11 @@ As Of:
 - 16:29 12/01/2023 - All Hosts Alive
 - 10:22 13/01/2023 - All Hosts Alive
 
+TEST 1 FINSIHED
+
 
 |SBC hostname |  Still Active | If Inactive, Last known time of Operation |
 |---|---|---|
+
+
+## Test 2
