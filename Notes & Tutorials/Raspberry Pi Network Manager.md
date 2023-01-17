@@ -120,3 +120,13 @@ To confirm the IP, once again run the command:
 Additionally, you can view the `/etc/sysconfig/network-scripts/ifcfg-enps03` file using cat command.
 
 `$ cat /etc/sysconfig/network-scripts/ifcfg-enps03`
+
+
+## PROBLEMS AGAIN
+
+issue with both SSH on LAN and connections via wifi (WHY!?!?!)
+
+Workaround: ? maybe?
+https://raspberrypi.stackexchange.com/questions/88954/workaround-for-a-wifi-bridge-on-a-raspberry-pi-with-proxy-arp/88955#88955
+
+
