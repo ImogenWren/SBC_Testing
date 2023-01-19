@@ -4,6 +4,17 @@
 Writes generic data to a file, constantly checking the size untill greater than Q
 Deletes the file
 loops
+
+To call this on boot up:
+Copy dataDump.py to home directory
+sudo chmod +x dataDump.py
+crontab -e -> @reboot sudo python3 dataDump.py
+nano genData.txt # maybe Not Nessissary
+sudo chmod 777 genData.txt # Might not be nessissary
+sudo reboot
+after reboot
+cat genData.txt to see if data is being written to file
+on odroid08 crontab = @reboot sudo sh /home/odroid/runDataDump.sh
 '''
 
 import os
