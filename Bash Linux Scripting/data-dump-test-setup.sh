@@ -12,14 +12,14 @@
 
 cd /
 echo Cloning sbc-testing repo...
-git clone https://github.com/ImogenWren/SBC_Testing /remotelabs/sbc-testing
+git clone https://github.com/ImogenWren/SBC_Testing /home/imogen/remotelabs/sbc-testing
 ls
 sleep 2
 echo copying python file
 sleep 2
 cp ./remotelabs/sbc-testing/python-scripting/dataDump.py /home/imogen/dataDump.py
 cd /
-sudo chmod +x dataDump.py
+sudo chmod +x /home/imogen/dataDump.py
 sleep 2
 echo Modifying Crontab
 sleep 1
