@@ -13,16 +13,23 @@
 cd /
 echo Cloning sbc-testing repo...
 git clone https://github.com/ImogenWren/SBC_Testing /remotelabs/sbc-testing
-ls | grep sbc-testing
+ls
+sleep 2
 echo copying python file
+sleep 2
 cp ./remotelabs/sbc-testing/python-scripting/dataDump.py /home/imogen/dataDump.py
 cd /
 sudo chmod +x dataDump.py
+sleep 2
 echo Modifying Crontab
+sleep 1
 echo "@reboot sudo python3 /home/imogen/dataDump.py" | sudo crontab
 sudo systemctl enable cron
+sleep 2
 date >> genData.txt
 cat genData.txt
+sleep 5
+echo Script Finished
 #sudo reboot
 
 
