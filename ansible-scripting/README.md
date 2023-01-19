@@ -2,6 +2,8 @@
 
 Automating the updating of all SBCs on the LAN
 
+Source: https://docs.ansible.com/ansible/latest/playbook_guide/index.html
+
 ## Getting Started
 
 1. Install Ansible. Visit the installation guide for complete details.
