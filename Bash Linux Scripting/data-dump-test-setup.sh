@@ -26,7 +26,7 @@ sleep 1
 echo "@reboot sudo python3 /home/imogen/dataDump.py" | sudo crontab
 sudo systemctl enable cron
 sleep 2
-date >> genData.txt
+date >> /home/imogen/genData.txt
 cat genData.txt
 sleep 5
 echo Script Finished
