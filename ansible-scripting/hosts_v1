@@ -1,0 +1,75 @@
+[odroid03]
+odroid03 ansible_host=192.168.1.3 practable_label=odroid03
+
+[odroid03:vars]
+ansible_connection=ssh
+ansible_user=odroid
+ansible_password=odroid
+
+[odroid04]
+odroid04 ansible_host=192.168.1.4 practable_label=odroid04
+
+[odroid04:vars]
+ansible_connection=ssh
+ansible_user=odroid
+ansible_password=odroid
+
+[odroid05]
+odroid05 ansible_host=192.168.1.5 practable_label=odroid05
+
+[odroid05:vars]
+ansible_connection=ssh
+ansible_user=odroid
+ansible_password=odroid
+
+[odroid06]
+odroid06 ansible_host=192.168.1.6 practable_label=odroid06
+
+[odroid06:vars]
+ansible_connection=ssh
+ansible_user=odroid
+ansible_password=odroid
+
+[odroid07]
+odroid07 ansible_host=192.168.1.7 practable_label=odroid07
+
+[odroid07:vars]
+ansible_connection=ssh
+ansible_user=odroid
+ansible_password=odroid
+
+
+[odroid08]
+odroid08 ansible_host=192.168.1.8 practable_label=odroid08
+
+[odroid08:vars]
+ansible_connection=ssh
+ansible_user=odroid
+ansible_password=odroid
+
+
+[odroid09]
+odroid09 ansible_host=192.168.1.9 practable_label=odroid09
+
+[odroid09:vars]
+ansible_connection=ssh
+ansible_user=odroid
+ansible_password=odroid
+
+
+[odroid10]
+odroid10 ansible_host=192.168.1.10 practable_label=odroid10
+
+[odroid10:vars]
+ansible_connection=ssh
+ansible_user=odroid
+ansible_password=odroid
+
+
+[odroid11]
+odroid11 ansible_host=192.168.1.11 practable_label=odroid11
+
+[odroid11:vars]
+ansible_connection=ssh
+ansible_user=odroid
+ansible_password=odroid
