@@ -32,4 +32,4 @@ Test the SSH connections, for example:
 
 5. Ping the managed nodes.
 
-ansible all -m ping
+`ansible all -m ping`
