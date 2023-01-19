@@ -24,6 +24,8 @@ Automating the updating of all SBCs on the LAN
 
 4. Set up SSH connections so Ansible can connect to the managed nodes.
 
+https://www.geekyhacker.com/2021/02/15/configure-ssh-key-based-authentication-on-raspberry-pi/#:~:text=SSH%20to%20your%20Raspberry%20Pi,That's%20the%20public%20key%20file.
+
 Add your public SSH key to the `authorized_keys` file on each remote system.
 
 Test the SSH connections, for example:
