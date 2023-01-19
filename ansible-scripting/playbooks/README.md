@@ -18,7 +18,7 @@ run script
 `sudo `/home/odroid/data-dump-test-od.sh`
 
 
-
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/script_module.html
 
 
 
