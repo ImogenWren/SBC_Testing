@@ -2,7 +2,7 @@
 
 Steps ansible script needs to take:
 
-1. git clone https://github.com/ImogenWren/SBC_Testing ./remotelabs/SBC_Testing
+1. git clone https://github.com/ImogenWren/SBC_Testing ./remotelabs/sbc-testing
 2. cp ./remotelabs/sbc-testing/python-scripting/dataDump.py /home/odroid/dataDump.py
 3. chmod +x dataDump.py
 4. echo "@reboot sudo python3 /home/odroid/dataDump.py" | sudo crontab
