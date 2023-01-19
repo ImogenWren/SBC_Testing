@@ -19,7 +19,7 @@ chmod +x dataDump.py
 echo Modifying Crontab
 echo "@reboot sudo python3 /home/imogen/dataDump.py" | sudo crontab
 sudo systemctl enable cron
-nano genData.txt
+echo date >> genData.txt
 sudo reboot
 
 
