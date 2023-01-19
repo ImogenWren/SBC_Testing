@@ -17,7 +17,7 @@ ls
 sleep 2
 echo copying python file
 sleep 2
-cp ./remotelabs/sbc-testing/python-scripting/dataDump.py /home/imogen/dataDump.py
+cp ./remotelabs/sbc-testing/python-scripting/dataDumpPi.py /home/imogen/dataDump.py
 cd /
 sudo chmod +x /home/imogen/dataDump.py
 sleep 2
