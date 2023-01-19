@@ -1,0 +1,3 @@
+---
+- name: install dataDump.py script in home folder
+  hosts: odroid01
