@@ -2,6 +2,27 @@
 
 Steps ansible script needs to take:
 
+copy file:
+`/remotelabs/sbc-testing/bash-scripting/data-dump-test-od.sh`
+
+to:
+
+`/home/odroid/data-dump-test-od.sh`
+
+make executable
+
+`chmod +x /home/odroid/data-dump-test-od.sh`
+
+run script
+
+`sudo `/home/odroid/data-dump-test-od.sh`
+
+
+
+
+
+
+## Setup Script /home/odroid/data-dump-test-od.sh
 1. git clone https://github.com/ImogenWren/SBC_Testing ./remotelabs/sbc-testing
 2. cp ./remotelabs/sbc-testing/python-scripting/dataDump.py /home/odroid/dataDump.py
 3. chmod +x dataDump.py
