@@ -1,5 +1,8 @@
 # ansible-scripting
 
+## Poorly documented but easier to follow guide
+https://crunchify.com/ansible-how-to-execute-commands-on-remote-hosts-and-get-complete-result-response-result-log-back/
+
 Automating the updating of all SBCs on the LAN
 
 Source: https://docs.ansible.com/ansible/latest/playbook_guide/index.html
