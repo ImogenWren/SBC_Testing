@@ -1,0 +1,15 @@
+SBC addresses:
+
+PEND30
+raspberrypi 192.168.1.65
+MAC Address: E4:5F:01:26:9D:D4
+Raspberry Pi Trading
+
+PEND24
+raspberrypi 192.168.1.33
+MAC Address: DC:A6:32:3C:04:56
+Raspberry Pi Trading
+
+
+
+
