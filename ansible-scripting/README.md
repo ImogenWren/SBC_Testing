@@ -1,5 +1,8 @@
 # ansible-scripting
 
+## To Run Playbook
+`ansible-playbook -b -v -u odroid install-dataDump.yml -kkkk --extra-vars "odroid-group" -i hosts`
+
 ## Poorly documented but easier to follow guide
 https://crunchify.com/ansible-how-to-execute-commands-on-remote-hosts-and-get-complete-result-response-result-log-back/
 
