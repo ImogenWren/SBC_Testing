@@ -7,6 +7,9 @@ Automating the updating of all SBCs on the LAN
 
 Source: https://docs.ansible.com/ansible/latest/playbook_guide/index.html
 
+## Issues?
+https://stackoverflow.com/questions/53205687/ansible-unable-to-parse-etc-ansible-hosts-as-an-inventory-source
+
 ## Getting Started
 
 1. Install Ansible. Visit the installation guide for complete details.
