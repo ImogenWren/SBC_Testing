@@ -12,6 +12,7 @@ Source: https://docs.ansible.com/ansible/latest/playbook_guide/index.html
 
 ## Issues?
 https://stackoverflow.com/questions/53205687/ansible-unable-to-parse-etc-ansible-hosts-as-an-inventory-source
+https://bobcares.com/blog/ansible-unable-to-parse-as-an-inventory-source/
 
 ## Getting Started
 
