@@ -1,7 +1,0 @@
-odroids:
-  hosts:
-    odroid02:
-      ansible_host: 192.168.1.2
-    odroid03:
-      ansible_host: 192.168.1.3
-    
