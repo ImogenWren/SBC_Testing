@@ -1,11 +1,18 @@
 # ansible-scripting
 
+## To Run Playbook
+`ansible-playbook -b -v -u odroid install-dataDump.yml -kkkk --extra-vars "odroid-group" -i hosts`
+
 ## Poorly documented but easier to follow guide
 https://crunchify.com/ansible-how-to-execute-commands-on-remote-hosts-and-get-complete-result-response-result-log-back/
 
 Automating the updating of all SBCs on the LAN
 
 Source: https://docs.ansible.com/ansible/latest/playbook_guide/index.html
+
+## Issues?
+https://stackoverflow.com/questions/53205687/ansible-unable-to-parse-etc-ansible-hosts-as-an-inventory-source
+https://bobcares.com/blog/ansible-unable-to-parse-as-an-inventory-source/
 
 ## Getting Started
 
@@ -30,6 +37,10 @@ Source: https://docs.ansible.com/ansible/latest/playbook_guide/index.html
 4. Set up SSH connections so Ansible can connect to the managed nodes.
 
 https://www.geekyhacker.com/2021/02/15/configure-ssh-key-based-authentication-on-raspberry-pi/#:~:text=SSH%20to%20your%20Raspberry%20Pi,That's%20the%20public%20key%20file.
+
+Navigate to ~/.ssh director on LOCAL machine and copy
+public SSH key to REMOTE device using command:
+`ssh-copy-id -i ~/.ssh/id_ed25519.pub odroid@192.168.1.4`
 
 Add your public SSH key to the `authorized_keys` file on each remote system.
 
