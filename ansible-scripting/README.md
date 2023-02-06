@@ -38,6 +38,10 @@ https://bobcares.com/blog/ansible-unable-to-parse-as-an-inventory-source/
 
 https://www.geekyhacker.com/2021/02/15/configure-ssh-key-based-authentication-on-raspberry-pi/#:~:text=SSH%20to%20your%20Raspberry%20Pi,That's%20the%20public%20key%20file.
 
+Navigate to ~/.ssh director on LOCAL machine and copy
+public SSH key to REMOTE device using command:
+`ssh-copy-id -i ~/.ssh/id_ed25519.pub odroid@192.168.1.4`
+
 Add your public SSH key to the `authorized_keys` file on each remote system.
 
 Test the SSH connections, for example:
