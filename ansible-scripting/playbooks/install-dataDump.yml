@@ -1,3 +1,9 @@
----
 - name: install dataDump.py script in home folder
-  hosts: odroid01
+  remote_user: odroid
+  hosts: odroid-group
+  tasks:
+    - name: Transfer script
+      copy: src=home/imogen/sbc-testing/bash-linux-scripting/data-dump-test-od.sh dest=home/odroid/ mode=0777
+
+    - name: Execute the script
+      command: sh home/odroid/data-dump-test-od.sh
