@@ -24,8 +24,8 @@ echo "@reboot sudo python3 /home/odroid/dataDump.py" | sudo crontab
 sudo systemctl enable cron
 sleep 2
 date >> /home/odroid/genData.txt
-cat genData.txt
+cat /home/odroid/genData.txt
 sleep 5
 echo Script Finished
-#sudo reboot
+sudo reboot
 
