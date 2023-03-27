@@ -25,7 +25,7 @@ sudo systemctl enable cron
 sleep 2
 date >> /home/odroid/genData.txt
 cat /home/odroid/genData.txt
-sleep 5
+sleep 2
 echo Script Finished
 echo REBOOTING NOW
 sudo reboot
