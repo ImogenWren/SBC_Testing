@@ -27,5 +27,6 @@ date >> /home/odroid/genData.txt
 cat /home/odroid/genData.txt
 sleep 5
 echo Script Finished
+echo REBOOTING NOW
 sudo reboot
 
