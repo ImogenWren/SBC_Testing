@@ -14,10 +14,10 @@ scp /home/imogen/remotelabs/sbc-testing/python-scripting/dataDump.py $1
 sleep 2
 echo copying setup script file
 sleep 2
-scp /home/odroid/remotelabs/sbc-testing/bash-linux-scripting/data-dump-setup.sh $1
+scp /home/imogen/remotelabs/sbc-testing/bash-linux-scripting/data-dump-setup.sh $1
 sleep 2
 echo copying genData.txt file
-scp /home/odroid/remotelabs/sbc-testing/python-scripting/genData.txt $1
+scp /home/imogen/remotelabs/sbc-testing/python-scripting/genData.txt $1
 echo Script Finished
 #sudo reboot
 
