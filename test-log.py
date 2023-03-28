@@ -60,8 +60,10 @@ def checkPower():
     return power_state
 
 
+
 def updateLog(up_list, down_list):
     print("\n\nUpdating Log")
+    print(returnDateTime())
     deliminator = "\n"
     up_string = deliminator.join(up_list)
     down_string = deliminator.join(down_list)
@@ -73,6 +75,19 @@ def updateLog(up_list, down_list):
     f.write(down_string)
     f.write("\n------\n")
     f.close()
+ 
+loggedPowerState = 0
+
+def logPowerDown(logged):
+    if logged_power_state == 0:
+        print("\n\nUpdating Log")
+        print(returnDateTime())
+        f = open("testLog.log", "a")
+        f.write(f"\n\nPower Out Detected:\n Date: {returnDateTime()}:")
+        f.write("\n------\n")
+        f.close()
+        logged_power_state=1
+    
 
 def ping(host):
     # Option for the number of packets as a function of
@@ -108,7 +123,6 @@ def initState():
 
 
 
-
 def logState():
     power_state = True
     print("Starting Ping Test")
@@ -135,10 +149,14 @@ def logState():
         power_state = checkPower()
         if power_state == True:              # Put this fudge fix here so the test results are not logged if power is lost midway between readings
             updateLog(up_list, down_list)
+            logged_power_state=0
         if down_list:
             print("\nNot all Hosts Alive\n")
         else:
             print("\nALL HOSTS ALIVE\n")
+        flash_led(2, 0.5)
+        time.sleep(20)
+        flash_led(6, 0.2)
     print("\nPower Loss Detected, Pausing Logging\n")
 
 
@@ -146,8 +164,6 @@ def waitState():
     print("Waiting for Power Detection")
     v_probe.wait_for_press(timeout=None)
     print("Power Detected")
-
-
 
 
 
@@ -170,3 +186,4 @@ def main():
 if __name__ == "__main__":
    main()
 
+	
