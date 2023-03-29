@@ -37,6 +37,12 @@ _The following configurations will be tested under the same conditions, preferab
 - All SBCs are plugged into a LAN via network switches
 - Enable SSH On all SBCs
 - Ensure data-dump-test Cronjobs set up as below.
+- All Files and Scripts used to setup, run and gather data for tests found in data-dump-test directory.
+
+Step 1: Copy files across using script from linux machine
+Step 2: Log into remote machine and run script to install crontab
+step 3: make sure crontab runs test log python script on test supervisor
+step 4: cat testLog.log and look for non-responsive clients
 
 ## Data Dump Test
 
@@ -46,6 +52,8 @@ _The following configurations will be tested under the same conditions, preferab
 		- Copies file to a different location.
 		- deletes both copies of the file.
 		- repeats
+		
+
 
 
 ## Cronjob
