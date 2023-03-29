@@ -7,12 +7,14 @@ _The following document outlines the procedure & rational for power cycle testin
  - Establish the difference between SD cards and EMMC boot drive options.
  - Establish difference between hard shut down (Power removed suddenly) and Sheduled shutdown.
  - Compare performance when SBC is powered via 12v input or regulated 5v direct to the 5v rail.
- - 2nd round of testing aims to push read/write cycles on external memory devices to discover limits of operation
-
+ - Aim to complete approximately 200 hard shutdown power cycles.
  
 
 ## Timeframe
-- Test is to be run indefinatly or until failure is seen.
+In order to complete between 192 and 240 hard shutdowns, with one power on/power off cycle taking 30 minutes to complete, 
+the test should be run for between 96 and 120 total hours, with a check once daily for failed units.
+This is anticipated to take one single work week, with the test starting on Monday morning, close to 0900 hours,
+and finishing before lunchtime on Friday, to enable data to be recorded as soon as the test is finished.
  
 
 ## Test Articles
@@ -29,30 +31,30 @@ _The following configurations will be tested under the same conditions, preferab
 |ODroid			| EMMC (Dont have enough to run concurrently - SD card for now|        	|x1	|SOFT SHUTDOWN - Cron Task to perform safe shutdown. Reboots with power strip - Control 2 |
 
 - Each SBC will have been set up from a known configuration, I.E. a formatted storage medium flashed with the lastest stable OS version.
-
-
+- Each SBC will be running a cronjob to log the current time to a file every 3 minutes saved at `./remotelabs/SCB_TEST.log`
+- SBCs that are being used with SOFT reset will have an additional cronjob to shut down every 10 minutes. This means they will cycle on for 10 mins, shutdown,
+then be rebooted by a power cycle that happens with the rest of the SBCs, ensuring that the same number of power down cycles are performed.
 
 ## Test Setup
 - All SBCs given a unique and incremented IP Address (192.168.1.X) and a logical hostname mirroring the IP
+	- https://www.cyberciti.biz/faq/ubuntu-change-hostname-command/ 
+		- Type the following command to edit /etc/hostname using nano or vi text editor: <br>
+			`sudo nano /etc/hostname`
+		- Delete the old name and setup new name.
+		- Next Edit the /etc/hosts file <br>
+			`sudo nano /etc/hosts`
+		- Reboot the system to changes take effect: <br> `sudo reboot`.
+	- https://ubuntu.com/server/docs/network-configuration	
 - All SBCs are plugged into a LAN via network switches
 - Enable SSH On all SBCs
-- Ensure data-dump-test Cronjobs set up as below.
+- Ensure connection to wifi to set date and time correctly. NOTE: Issue with interfacing with university internet, could use additional Rpi as router but scope is too large. Log times might just be wrong, or set time & date manually https://www.cyberciti.biz/faq/howto-set-date-time-from-linux-command-prompt/
+- `date --set="STRING"`
+- `sudo date --set="2 OCT 2006 18:00:00`
+- Ensure Cronjobs set up as below
 
-## Data Dump Test
-
-- Cronjob calls a python script
-	- Python Script
-		- continuously writes data to external memory device.
-		- Copies file to a different location.
-		- deletes both copies of the file.
-		- repeats
-
+- Engineering Laptop set to static ip `192.168.1.100`
 
 ## Cronjob
--- NEW
-
-
--- Old
 To Edit Cronjob file: 
 `crontab -u odroid -e` <br>
 
@@ -104,12 +106,15 @@ If expanding on methodology, or connecting SBCs to WAN then use safer option of 
 
 ### Running Test
 
-- Power Strip is turned on and test is run indefinatly
-- Online status is checked by an additional SBC running test-log.py script and outputting a log of power outages and ping responses to testLog.log in user folder
+- Power Strip is turned on and test is run for between ___ and ___ hours.
+- Daily check for communication from each SBC using PING over LAN.
+- Note down any SBCs that do not respond to pings, and last known time of operation. (Could be automated in future?)
+- Attempt SSH into any "failed" SBCs to confirm status. Note down any performance issues or inactivity.
+- If 
 
 ### End of Test
 
-.
+- After a maximum of ___ hours, each SBC can be soft shut down, the power strip is turned off and SBCs are unplugged from power sources.
 
 ### Data Gathering
 

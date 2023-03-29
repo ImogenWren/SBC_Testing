@@ -9,7 +9,6 @@ To call this on boot up:
 Copy dataDump.py to home directory
 sudo chmod +x dataDump.py
 crontab -e -> @reboot sudo python3 dataDump.py
-mkdir data_dump
 nano genData.txt # maybe Not Nessissary
 sudo chmod 777 genData.txt # Might not be nessissary
 sudo reboot
@@ -22,7 +21,6 @@ import os
 import platform
 import subprocess
 import time
-import shutil
 
 
 from datetime import datetime
@@ -31,11 +29,9 @@ from datetime import datetime
 FILENAME = "genData.txt"
 FILEPATH = "/home/odroid/"
 
-COPYPATH = "/home/odroid/data_dump/"
+STRINGDATA = "All Work and No Play Make Jack a Dull Boy"
 
-STRINGDATA = " All Work and No Play Make Jack a Dull Boy "
-
-MAX_FILESIZE_MB = 3000
+MAX_FILESIZE_MB = 300
 
 SLEEP_TIME = 0
 
@@ -107,11 +103,6 @@ def updateLog(up_list, down_list):
 
 
 
-def copy_file():
-    shutil.copy(FILEPATH + FILENAME, COPYPATH + FILENAME)
-
-
-
 
 
 
@@ -125,9 +116,7 @@ def main():
         i = i + 1
         dumpData(FILENAME, FILEPATH, STRINGDATA)
         if (checkFileSize(FILENAME, FILEPATH, MAX_FILESIZE_MB)):
-            copy_file()
             deleteData(FILENAME, FILEPATH)
-            deleteData(COPYPATH, FILENAME)
             time.sleep(SLEEP_TIME) # // Just for testing
 
 
