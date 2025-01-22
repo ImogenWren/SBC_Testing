@@ -20,4 +20,3 @@ echo copying genData.txt file
 scp /home/imogen/remotelabs/sbc-testing/python-scripting/genData.txt $1
 echo Script Finished
 #sudo reboot
-
